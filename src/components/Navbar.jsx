@@ -27,7 +27,7 @@ const Navbar = () => {
           <button className='px-8 py-2.5'>Sign Up</button>
         </div>
         <div
-          className='md:hidden'
+          className='md:hidden mr-4'
           onClick={() => setNav((prevState) => !prevState)}
         >
           {!nav ? <MenuIcon className='w-5' /> : <XIcon className='w-5' />}
