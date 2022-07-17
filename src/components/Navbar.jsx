@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
+import { Link, animateScroll as scroll } from 'react-scroll';
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+
+  const handleClose = (prevState) => setNav(!prevState);
 
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-md'>
@@ -12,11 +16,31 @@ const Navbar = () => {
           <h1 className='text-3xl font-bold mr-4 sm:text-4xl'>BRAND</h1>
 
           <ul className='hidden md:flex'>
-            <li>Home</li>
-            <li>About</li>
-            <li>Support</li>
-            <li>Platforms</li>
-            <li>Pricing</li>
+            <li>
+              <Link to='home' smooth={true} duration={500}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to='about' smooth={true} offset={-200} duration={500}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to='support' smooth={true} offset={-50} duration={500}>
+                Support
+              </Link>
+            </li>
+            <li>
+              <Link to='platforms' smooth={true} offset={-100} duration={500}>
+                Platforms
+              </Link>
+            </li>
+            <li>
+              <Link to='pricing' smooth={true} offset={-50} duration={500}>
+                Pricing
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -39,11 +63,55 @@ const Navbar = () => {
           nav ? 'absolute md:hidden bg-zinc-200 w-full px-8' : 'hidden'
         }
       >
-        <li className='border-b-2 border-zinc-300 w-full'>Home</li>
-        <li className='border-b-2 border-zinc-300 w-full'>About</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Support</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Platforms</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Pricing</li>
+        <li className='border-b-2 border-zinc-300 w-full'>
+          <Link to='home' smooth={true} duration={500} onClick={handleClose}>
+            Home
+          </Link>
+        </li>
+        <li className='border-b-2 border-zinc-300 w-full'>
+          <Link
+            to='about'
+            smooth={true}
+            offset={-100}
+            duration={500}
+            onClick={handleClose}
+          >
+            About
+          </Link>
+        </li>
+        <li className='border-b-2 border-zinc-300 w-full'>
+          <Link
+            to='support'
+            smooth={true}
+            offset={-50}
+            duration={500}
+            onClick={handleClose}
+          >
+            Support
+          </Link>
+        </li>
+        <li className='border-b-2 border-zinc-300 w-full'>
+          <Link
+            to='platforms'
+            smooth={true}
+            offset={-100}
+            duration={500}
+            onClick={handleClose}
+          >
+            Platforms
+          </Link>
+        </li>
+        <li className='border-b-2 border-zinc-300 w-full'>
+          <Link
+            to='pricing'
+            smooth={true}
+            offset={-50}
+            duration={500}
+            onClick={handleClose}
+          >
+            Pricing
+          </Link>
+        </li>
 
         <div className='flex flex-col my-4'>
           <button className='bg-transparent text-indigo-600 px-8 py-2.5 mb-4'>

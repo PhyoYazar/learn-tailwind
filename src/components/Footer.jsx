@@ -73,7 +73,7 @@ const Footer = () => {
        text-center text-gray-500'
       >
         <p className=''>2022 Workflow, LLC, All rights reserved.</p>
-        <div className='flex gap-2 text-2xl mt-4 sm:mt-0'>
+        <div className='flex gap-2 sm:gap-6 text-2xl mt-4 sm:mt-0'>
           <FaFacebook />
           <FaInstagram />
           <FaTwitter />
